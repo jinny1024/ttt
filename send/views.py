@@ -31,6 +31,9 @@ colors = {
 }
 
 class SendView(View):
+    def get(self, request):
+        if request.method = 'GET':
+            return JsonResponse({'message' : 'success'},status=200)
     @csrf_exempt
     def post(request):
         if request.method == 'POST':
