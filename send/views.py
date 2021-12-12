@@ -32,7 +32,11 @@ colors = {
 
 class SendView(View):
     @csrf_exempt
-    def post(request):
+    def get(request):
+        if request.method == 'GET':
+            return JsonResponse({'message' : 'success'},status=200)
+        
+    def post(request):        
         if request.method == 'POST':
             # json 형식 받기
             data = json.loads(request.body)
